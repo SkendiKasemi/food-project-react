@@ -1,0 +1,72 @@
+/* HEADER */
+
+.header {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 80px;
+  justify-items: center;
+  align-items: center;
+  background-color: #ffa94d;
+  color: #0f0f14;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+/* Logo */
+
+.header-logo-icon {
+  width: 60px;
+  height: 60px;
+  fill: #0f0f14;
+  stroke: #0f0f14;
+  cursor: pointer;
+}
+
+/* Links */
+
+.header-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.header-link:link,
+.header-link:visited {
+  font-size: 22px;
+  text-decoration: none;
+  color: #0f0f14;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  transition: all 0.25s ease-in;
+  font-weight: 500;
+}
+
+.header-icon {
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  transition: all 0.25s ease-in;
+}
+
+.header-link:hover {
+  background-color: #0f0f14;
+  color: #ffa94d;
+}
+
+.header-link:hover .header-icon {
+  fill: #ffa94d;
+}
+
+.header-link:hover .cook-icon {
+  stroke: #ffa94d;
+}
+
+/* END HEADER */

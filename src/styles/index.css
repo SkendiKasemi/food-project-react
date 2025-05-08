@@ -1,0 +1,141 @@
+/* 
+BGC : #ffa94d
+TXT : #0F0F14
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  position: relative;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 80px 1fr 50px;
+  color: #0f0f14;
+  column-gap: 40px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.link {
+  text-decoration: none;
+  color: #ffa94d;
+}
+
+.general-main-part {
+  grid-column: 2 / -1;
+  margin-top: 40px;
+  margin-right: 50px;
+}
+
+/* SPINNER */
+.spinner-wrapper {
+  position: fixed; /* Stay on top of layout */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(15, 15, 20, 0.8);
+  z-index: 9999; /* On top of other content */
+}
+
+.spinner {
+  --size: 50px;
+  --color: #ffa94d;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.spinner::after,
+.spinner::before {
+  box-sizing: border-box;
+  position: absolute;
+  content: '';
+  width: var(--size);
+  height: var(--size);
+  top: 50%;
+  animation: up 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+  left: 50%;
+  background: var(--color);
+  box-shadow: 0 0 calc(var(--size) / 3) rgba(0, 0, 0, 0.25);
+}
+
+.spinner::after {
+  background: var(--color);
+  top: calc(50% - var(--size));
+  left: calc(50% - var(--size));
+  animation: down 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+}
+
+@keyframes down {
+  0%,
+  100% {
+    transform: none;
+  }
+
+  25% {
+    transform: translateX(100%);
+  }
+
+  50% {
+    transform: translateX(100%) translateY(100%);
+  }
+
+  75% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes up {
+  0%,
+  100% {
+    transform: none;
+  }
+
+  25% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+
+  75% {
+    transform: translateY(-100%);
+  }
+}
+
+/* Did You Know 
+
+.did-you-know {
+  position: absolute;
+  right: 20px;
+  top: 100vh;
+  height: 80px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  width: 350px;
+  background-color: #ffd8a8;
+  color: #292e32;
+  border-radius: 40px;
+  padding: 10px 20px;
+}
+
+.did-you-know h2 {
+  font-size: 18px;
+}
+
+.did-you-know p {
+  font-size: 14px;
+}
+*/
+/* END Did You Know */

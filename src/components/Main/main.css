@@ -1,0 +1,308 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Search Input */
+
+.search-form {
+  margin-bottom: 50px;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.search-input {
+  width: 400px;
+  height: 60px;
+  border-radius: 40px;
+  border: 3px solid #0f0f14;
+  padding: 5px 20px;
+  font-size: 18px;
+  transition: border 0.25s ease;
+  outline: none;
+}
+
+.search-btn-svg {
+  width: 32px;
+  height: 32px;
+  stroke: #0f0f14;
+  fill: none;
+  transition: all 0.25s ease;
+}
+
+.search-form:focus-within .search-input {
+  border: 3px solid #ffa94d;
+}
+
+.search-form:focus-within .search-btn-svg {
+  stroke: #ffa94d;
+}
+
+.search-btn {
+  background-color: transparent;
+  border: none;
+  margin-left: -50px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+}
+
+/* Entrance */
+
+.entrance {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.entrance h2 {
+  font-size: 40px;
+  letter-spacing: -2.5px;
+  height: 300px;
+  width: 600px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: -20px;
+  align-items: center;
+  justify-items: center;
+}
+
+.icon {
+  height: 60px;
+  width: 60px;
+  fill: #ffa94d;
+  justify-self: start;
+}
+
+.kitchen-icon {
+  grid-column: 3 / 4;
+  grid-row: 1;
+}
+
+.heart-icon {
+  grid-column: 4 / 5;
+  grid-row: 2;
+  margin-left: -65px;
+  fill: none;
+  height: 72px;
+  width: 72px;
+}
+
+.cookie-icon {
+  stroke: #0f0f14;
+  fill: none;
+  grid-row: 3;
+  grid-column: 2;
+  justify-self: center;
+  margin-right: -40px;
+}
+
+.first-child {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+
+.second-child {
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+}
+
+.third-child {
+  grid-column: 3 / -1;
+  grid-row: 3 / -1;
+}
+
+.image-container {
+  position: relative;
+  overflow: visible;
+  padding-top: 10px;
+}
+
+.decorative {
+  background: linear-gradient(to bottom right, #ffa94d 40%, #fff 95%);
+  height: 98%;
+  width: 100%;
+  z-index: -1;
+  border-radius: 40px;
+  position: absolute;
+
+  right: -40px;
+  top: -0px;
+}
+
+.entrance-img {
+  width: 300px;
+  object-fit: cover;
+  border-top-right-radius: 40px;
+  border-top-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  z-index: 2;
+}
+
+/* END Entrance */
+
+/* ************ */
+
+/* Dish of the day */
+
+.dish-of-the-day {
+  align-self: center;
+  justify-self: center;
+
+  margin-top: 120px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  row-gap: 30px;
+  border-radius: 40px;
+  padding: 20px;
+  column-gap: 60px;
+}
+
+.dish-of-the-day h2 {
+  grid-column: 1 / -1;
+  justify-self: start;
+  align-self: center;
+  font-size: 42px;
+}
+
+.dish-of-the-day-img {
+  align-self: center;
+  justify-self: center;
+  object-fit: contain;
+  width: 100%;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.description {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.description h3 {
+  font-size: 28px;
+  grid-column: 1 / -1;
+}
+
+.description h4 {
+  font-size: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+.ingredients-list {
+  margin-left: 30px;
+  margin-top: 15px;
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+/* END Dish Of The Day */
+
+/* ******************* */
+
+
+
+/* **************** */
+
+/* ***************** */
+
+/* Kitchen Organization */
+
+.kitchen-organization {
+  margin-right: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 80px 300px 300px;
+  column-gap: 80px;
+  row-gap: 50px;
+  margin-top: 80px;
+}
+
+.kitchen-organization h2 {
+  font-size: 48px;
+  grid-column: 1 / -1;
+  align-self: start;
+  justify-self: start;
+}
+
+.tip {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px 70px 150px;
+}
+
+.tip h3 {
+  font-size: 28px;
+}
+
+.tip p {
+  font-size: 22px;
+  align-self: center;
+}
+
+.tip ul {
+  margin-left: 20px;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+/* END Kitchen Organization */
+
+/* ************************* */
+
+/* International Cuisine */
+
+.st0 {
+  fill: #ffa94d;
+}
+.international-cuisine {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 50px 250px;
+  row-gap: 60px;
+  margin-top: 130px;
+  column-gap: 40px;
+}
+
+.international-cuisine h2 {
+  font-size: 48px;
+  grid-column: 1 / -1;
+}
+
+.cuisine {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 36px 48px 100px;
+  row-gap: 10px;
+}
+
+.international-food-icon {
+  width: 32px;
+  height: 32px;
+  fill: none;
+  stroke: #ffa94d;
+}
+
+.cuisine h3 {
+  font-size: 24px;
+}
+
+.cuisine p {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+/* END International Cuisine  */
+
+/* ************************** */
+
+/* END MAIN */
