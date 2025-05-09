@@ -8,25 +8,16 @@ function FavoritesPage() {
   if (!items || items.length === 0)
     return <p>You have no items of the favorites list</p>;
 
+
   return (
     <>
       <h3 className='fav-page-header'>Favorites: </h3>
       <div className='food-card-container'>
         {items.map((item) => {
-          const { id, name, image, area, category } = item;
+          const { id, name, image } = item;
 
-          return (
-            <FoodCard
-              name={name}
-              area={area}
-              category={category}
-              image={image}
-              id={id}
-              key={id}
-            />
-          );
+          return <FoodCard name={name} image={image} id={id} key={id} />;
         })}
-        {/* nothing */}
       </div>
     </>
   );
