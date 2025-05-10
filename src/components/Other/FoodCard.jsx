@@ -1,16 +1,14 @@
 import { Link } from 'react-router-dom';
 import DeleteSVG from '../svg/DeleteSVG';
 import { deleteItemByIdFromLocalStorage } from '../../data/deleteItemFromFavorites';
-import { useFavorites } from '../../context/FavoritesContext';
 
-function FoodCard({ id, name, image }) {
-  const { setItems } = useFavorites();
-
+function FoodCard({ id, name, image, storageKey, setItems }) {
   const handleDelete = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    deleteItemByIdFromLocalStorage('favorites', id, name, setItems);
-    alert(`${name} has been removed from favorites.`);
+    deleteItemByIdFromLocalStorage(`${storageKey}`, id, name, setItems);
+
+    // alert
   };
   return (
     <Link className='food-card' to={`/single-dish/${id}`}>

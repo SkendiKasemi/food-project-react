@@ -15,15 +15,13 @@ const FavoritesProvider = ({ children }) => {
       return [];
     }
   });
-  const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('favorites', JSON.stringify(items));
   }, [items]);
 
-
   return (
-    <FavoritesContext.Provider value={{ items, setItems, isFav, setIsFav }}>
+    <FavoritesContext.Provider value={{ items, setItems }}>
       {children}
     </FavoritesContext.Provider>
   );

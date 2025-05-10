@@ -1,4 +1,6 @@
 import HeaderSearchInput from '../components/Main/SearchBar/SearchInput';
+import CookedItSVG from '../components/svg/CookedItSVG';
+import CookLaterSVG from '../components/svg/CookLaterSVG';
 import {
   TodayDishSVG,
   FavoritesSVG,
@@ -6,7 +8,6 @@ import {
   KitchenTipsSVG,
   OtherDishesSVG,
 } from '../components/svg/NavHeaderSVG';
-
 
 export const headerNavData = [
   {
@@ -20,18 +21,18 @@ export const headerNavData = [
     text: 'Other Dishes',
   },
   {
-    href: '/kitchen-tips',
-    Icon: <KitchenTipsSVG />,
-    text: 'Kitchen Tips',
-  },
-  {
-    href: '/international',
-    Icon: <InternationalSVG />,
-    text: 'International',
-  },
-  {
     href: '/favorites',
     Icon: <FavoritesSVG />,
     text: 'Favorites',
+  },
+  {
+    href: '/cook-later',
+    Icon: <CookLaterSVG />,
+    text: 'Cook Later',
+  },
+  {
+    href: '/cooked-meals',
+    Icon: <CookedItSVG />,
+    text: 'Cooked Meals',
   },
 ];

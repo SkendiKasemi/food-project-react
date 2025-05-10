@@ -1,4 +1,4 @@
-export const addItem = (meal, items, setItems) => {
+export const addItem = (meal, items, setItems, storePlace) => {
   const {
     idMeal,
     strMeal: name,
@@ -17,11 +17,11 @@ export const addItem = (meal, items, setItems) => {
 
   const isDuplicate = items.some((item) => item.name === newItem.name);
   if (isDuplicate) {
-    alert('Meal Already Added To Favorites!');
+    alert(`Meal Already Added To ${storePlace}!`);
     return;
   }
 
   const updatedItems = [...items, newItem];
   setItems(updatedItems);
-  localStorage.setItem('favorites', JSON.stringify(updatedItems));
+  localStorage.setItem(`${storePlace}`, JSON.stringify(updatedItems));
 };

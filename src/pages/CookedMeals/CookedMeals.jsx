@@ -1,16 +1,14 @@
 import FoodCard from '../../components/Other/FoodCard';
-import { useFavorites } from '../../context/FavoritesContext';
-import './favorites.css';
+import { useCookedMeals } from '../../context/CookedMealsContext';
 
-function FavoritesPage() {
-  const { items, setItems } = useFavorites();
+function CookedMeals() {
+  const { items, setItems } = useCookedMeals();
 
-  if (!items || items.length === 0)
-    return <p>You have no items of the favorites list</p>;
+  if (!items || items.length === 0) return <p>You have no items yet...</p>;
 
   return (
     <>
-      <h3 className='fav-page-header'>Favorites: </h3>
+      <h3 className='fav-page-header'>Cooked Meals:</h3>
       <div className='food-card-container'>
         {items.map((item) => {
           const { id, name, image } = item;
@@ -22,7 +20,7 @@ function FavoritesPage() {
               id={id}
               key={id}
               setItems={setItems}
-              storageKey={'favorites'}
+              storageKey={'cookedMeals'}
             />
           );
         })}
@@ -31,4 +29,4 @@ function FavoritesPage() {
   );
 }
 
-export default FavoritesPage;
+export default CookedMeals;

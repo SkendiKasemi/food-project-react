@@ -6,6 +6,8 @@ import { DishOfTheDayProvider } from './context/DishOfTheDayContext.jsx';
 import { OtherDishesProvider } from './context/OtherDishesContext.jsx';
 import { SingleDishByIdProvider } from './context/SingleDishByIdContext.jsx';
 import { FavoritesProvider } from './context/FavoritesContext.jsx';
+import { CookLaterProvider } from './context/CookLaterContext.jsx';
+import { CookedMealsProvider } from './context/CookedMealsContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -13,7 +15,11 @@ createRoot(document.getElementById('root')).render(
       <SingleDishByIdProvider>
         <OtherDishesProvider>
           <FavoritesProvider>
-            <App />
+            <CookLaterProvider>
+              <CookedMealsProvider>
+                <App />
+              </CookedMealsProvider>
+            </CookLaterProvider>
           </FavoritesProvider>
         </OtherDishesProvider>
       </SingleDishByIdProvider>
