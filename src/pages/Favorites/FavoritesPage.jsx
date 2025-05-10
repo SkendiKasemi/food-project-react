@@ -1,34 +1,12 @@
-import FoodCard from '../../components/Other/FoodCard';
-import { useFavorites } from '../../context/FavoritesContext';
-import './favorites.css';
+import { useFavorites } from '../../context/localStorageContexts';
+import StorageListPage from '../StorageListPage/StorageListPage';
 
-function FavoritesPage() {
-  const { items, setItems } = useFavorites();
-
-  if (!items || items.length === 0)
-    return <p>You have no items of the favorites list</p>;
-
+export default function FavoritesPage() {
   return (
-    <>
-      <h3 className='fav-page-header'>Favorites: </h3>
-      <div className='food-card-container'>
-        {items.map((item) => {
-          const { id, name, image } = item;
-
-          return (
-            <FoodCard
-              name={name}
-              image={image}
-              id={id}
-              key={id}
-              setItems={setItems}
-              storageKey={'favorites'}
-            />
-          );
-        })}
-      </div>
-    </>
+    <StorageListPage
+      title='Favorites'
+      useStorageHook={useFavorites}
+      storageKey='favorites'
+    />
   );
 }
-
-export default FavoritesPage;

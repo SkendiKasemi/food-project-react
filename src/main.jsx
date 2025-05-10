@@ -5,22 +5,25 @@ import App from './App.jsx';
 import { DishOfTheDayProvider } from './context/DishOfTheDayContext.jsx';
 import { OtherDishesProvider } from './context/OtherDishesContext.jsx';
 import { SingleDishByIdProvider } from './context/SingleDishByIdContext.jsx';
-import { FavoritesProvider } from './context/FavoritesContext.jsx';
-import { CookLaterProvider } from './context/CookLaterContext.jsx';
-import { CookedMealsProvider } from './context/CookedMealsContext.jsx';
+
+import {
+  FavoritesProvider,
+  CookLaterProvider,
+  CookedMealsProvider,
+} from './context/localStorageContexts.js';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <DishOfTheDayProvider>
       <SingleDishByIdProvider>
         <OtherDishesProvider>
-          <FavoritesProvider>
-            <CookLaterProvider>
-              <CookedMealsProvider>
+          <CookLaterProvider>
+            <CookedMealsProvider>
+              <FavoritesProvider>
                 <App />
-              </CookedMealsProvider>
-            </CookLaterProvider>
-          </FavoritesProvider>
+              </FavoritesProvider>
+            </CookedMealsProvider>
+          </CookLaterProvider>
         </OtherDishesProvider>
       </SingleDishByIdProvider>
     </DishOfTheDayProvider>

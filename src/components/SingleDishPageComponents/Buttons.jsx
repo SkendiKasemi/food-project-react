@@ -1,6 +1,8 @@
-import { useCookedMeals } from '../../context/CookedMealsContext';
-import { useCookLater } from '../../context/CookLaterContext';
-import { useFavorites } from '../../context/FavoritesContext';
+import {
+  useCookedMeals,
+  useCookLater,
+  useFavorites,
+} from '../../context/localStorageContexts';
 import { useDishById } from '../../context/SingleDishByIdContext';
 import { addItem } from '../../data/addItemToFavorites';
 import CookedItSVG from '../svg/CookedItSVG';
