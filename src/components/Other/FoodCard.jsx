@@ -7,8 +7,7 @@ function FoodCard({ id, name, image, storageKey, setItems }) {
     e.preventDefault();
     e.stopPropagation();
     deleteItemByIdFromLocalStorage(`${storageKey}`, id, name, setItems);
-
-    // alert
+    alert(storageKey);
   };
   return (
     <Link className='food-card' to={`/single-dish/${id}`}>

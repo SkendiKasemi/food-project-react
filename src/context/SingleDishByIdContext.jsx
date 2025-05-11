@@ -31,10 +31,6 @@ const SingleDishByIdProvider = ({ children }) => {
     ingredients,
   };
 
-  console.log(meal);
-  
-
-
   return (
     <SingleDishByIdContext.Provider
       value={{

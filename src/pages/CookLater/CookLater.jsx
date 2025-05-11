@@ -6,7 +6,7 @@ function CookLater() {
     <StorageListPage
       title='Cook Later'
       useStorageHook={useCookLater}
-      storageKey='favorites'
+      storageKey='cookLater'
     />
   );
 }

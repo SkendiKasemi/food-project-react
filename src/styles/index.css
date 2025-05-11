@@ -32,6 +32,30 @@ TXT : #0F0F14
   margin-right: 50px;
 }
 
+/* ScrollBar */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Background of the track */
+::-webkit-scrollbar-track {
+  background: #ffa94d;
+  z-index: -1;
+  /* border-radius: 10px; */
+}
+
+/* Scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background: #0f0f14;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0f0f14;
+}
+
 /* SPINNER */
 .spinner-wrapper {
   position: fixed; /* Stay on top of layout */

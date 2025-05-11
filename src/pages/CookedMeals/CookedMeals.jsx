@@ -6,7 +6,7 @@ function CookedMeals() {
     <StorageListPage
       title='Cooked Meals'
       useStorageHook={useCookedMeals}
-      storageKey='favorites'
+      storageKey='cookedMeals'
     />
   );
 }

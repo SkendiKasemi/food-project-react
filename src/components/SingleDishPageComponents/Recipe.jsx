@@ -1,17 +1,15 @@
 import { useDishById } from '../../context/SingleDishByIdContext';
+import RecipeCard from '../Other/RecipeCard';
 
 function Recipe() {
   const { meal } = useDishById();
   return (
     <div className='sdp-recipe'>
-      <ul className='recipe-list'>
-        <span>Recipe: </span>
-        {meal.ingredients.map((ingr, i) => (
-          <li key={i} className='recipe-ingredient'>
-            {ingr}
-          </li>
-        ))}
-      </ul>
+      <RecipeCard
+        items={meal.ingredients}
+        liClassname={'recipe-ingredient'}
+        ulClassName={'recipe-list'}
+      />
     </div>
   );
 }
