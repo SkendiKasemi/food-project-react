@@ -5,52 +5,6 @@
 
 /* Search Input */
 
-.search-form {
-  margin-bottom: 50px;
-  align-self: center;
-  justify-self: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.search-input {
-  width: 400px;
-  height: 60px;
-  border-radius: 40px;
-  border: 3px solid #0f0f14;
-  padding: 5px 20px;
-  font-size: 18px;
-  transition: border 0.25s ease;
-  outline: none;
-}
-
-.search-btn-svg {
-  width: 32px;
-  height: 32px;
-  stroke: #0f0f14;
-  fill: none;
-  transition: all 0.25s ease;
-}
-
-.search-form:focus-within .search-input {
-  border: 3px solid #ffa94d;
-}
-
-.search-form:focus-within .search-btn-svg {
-  stroke: #ffa94d;
-}
-
-.search-btn {
-  background-color: transparent;
-  border: none;
-  margin-left: -50px;
-  cursor: pointer;
-  position: absolute;
-  right: 20px;
-}
-
 /* Entrance */
 
 .entrance {
@@ -208,8 +162,6 @@ ul {
 /* END Dish Of The Day */
 
 /* ******************* */
-
-
 
 /* **************** */
 

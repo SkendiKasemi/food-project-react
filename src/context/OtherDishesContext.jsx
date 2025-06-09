@@ -7,7 +7,7 @@ const OtherDishesProvider = ({ children }) => {
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Check if we already have meals in localStorage from today
+
   const fetchMeals = async () => {
     const today = new Date().toDateString();
     const cachedData = JSON.parse(localStorage.getItem('otherDishes'));

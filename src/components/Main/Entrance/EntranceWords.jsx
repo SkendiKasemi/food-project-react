@@ -15,8 +15,8 @@ function EntranceWords() {
       <span
         className='third-child'
         style={{
-          color: "#ffa94d", 
-          textDecoration: "underline"
+          color: '#ffa94d',
+          textDecoration: 'underline',
         }}
       >
         Every Bite Matters.

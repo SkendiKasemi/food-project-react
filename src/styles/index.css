@@ -11,12 +11,17 @@ TXT : #0F0F14
   box-sizing: border-box;
 }
 
+:root {
+  --main-color: #ffa94d;
+  --second-color: #0f0f14;
+}
+
 #root {
   position: relative;
   display: grid;
   grid-template-columns: 300px 1fr;
   grid-template-rows: 80px 1fr 50px;
-  color: #0f0f14;
+  color: var(--second-color);
   column-gap: 40px;
   font-family: 'Roboto', sans-serif;
 }

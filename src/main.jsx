@@ -11,6 +11,7 @@ import {
   CookLaterProvider,
   CookedMealsProvider,
 } from './context/localStorageContexts.js';
+import { SearchProvider } from './context/SearchContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -20,7 +21,9 @@ createRoot(document.getElementById('root')).render(
           <CookLaterProvider>
             <CookedMealsProvider>
               <FavoritesProvider>
-                <App />
+                <SearchProvider>
+                  <App />
+                </SearchProvider>
               </FavoritesProvider>
             </CookedMealsProvider>
           </CookLaterProvider>
