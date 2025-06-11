@@ -12,6 +12,8 @@ import {
   CookedMealsProvider,
 } from './context/localStorageContexts.js';
 import { SearchProvider } from './context/SearchContext.jsx';
+import { OtherDishesPageProvider } from './context/OtherDishesPageContext.jsx';
+import { SingleCategoryProvider } from './context/SingleCategory.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -22,7 +24,11 @@ createRoot(document.getElementById('root')).render(
             <CookedMealsProvider>
               <FavoritesProvider>
                 <SearchProvider>
-                  <App />
+                  <OtherDishesPageProvider>
+                    <SingleCategoryProvider>
+                      <App />
+                    </SingleCategoryProvider>
+                  </OtherDishesPageProvider>
                 </SearchProvider>
               </FavoritesProvider>
             </CookedMealsProvider>

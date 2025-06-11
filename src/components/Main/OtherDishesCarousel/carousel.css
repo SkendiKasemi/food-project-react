@@ -38,7 +38,7 @@ TXT : #0F0F14
 
 .card-image {
   position: relative;
-  background-color: blue;
+  background-color: transparent;
   margin-bottom: -0.75rem;
 }
 

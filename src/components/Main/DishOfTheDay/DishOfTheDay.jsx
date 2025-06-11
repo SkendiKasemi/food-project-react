@@ -10,11 +10,12 @@ function DishOfTheDay() {
   if (!idMeal) return <Loading />;
 
   return (
-    <div className='dish-of-the-day' id='dish-of-the-day'>
-      <h2>Dish of the day</h2>
-      <DOTDimage />
-      <DOTDdescription />
-      {/*  */}
+    <div className='center'>
+      <div className='dish-of-the-day' id='dish-of-the-day'>
+        <h2>Dish of the day</h2>
+        <DOTDimage />
+        <DOTDdescription />
+      </div>
     </div>
   );
 }

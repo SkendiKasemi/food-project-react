@@ -1,3 +1,4 @@
+import Reveal from '../Other/Reveal';
 import DishOfTheDay from './DishOfTheDay/DishOfTheDay';
 import Entrance from './Entrance/Entrance';
 import InternationalCuisines from './InternationalCuisines/InternationalCuisines';
@@ -11,11 +12,21 @@ function Main() {
   return (
     <main className='main'>
       <SearchInput />
-      <Entrance />
-      <DishOfTheDay />
-      <Carousel />
-      <KitchenOrganizationTips />
-      <InternationalCuisines />
+      <Reveal>
+        <Entrance />
+      </Reveal>
+      <Reveal>
+        <DishOfTheDay />
+      </Reveal>
+      <Reveal>
+        <Carousel />
+      </Reveal>
+      <Reveal>
+        <KitchenOrganizationTips />
+      </Reveal>
+      <Reveal>
+        <InternationalCuisines />
+      </Reveal>
     </main>
   );
 }

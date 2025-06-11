@@ -1,4 +1,3 @@
-// fetchSearchMeal.js
 export const fetchSearchMeal = async (query, setData, signal) => {
   if (!query || query.length < 3) {
     setData([]);
@@ -6,9 +5,9 @@ export const fetchSearchMeal = async (query, setData, signal) => {
   }
   try {
     const paths = [
-      `search.php?s=${query}`, // full details
-      `filter.php?c=${query}`, // only id, name, thumb
-      `filter.php?a=${query}`, // only id, name, thumb
+      `search.php?s=${query}`, 
+      `filter.php?c=${query}`, 
+      `filter.php?a=${query}`, 
     ];
 
     // 1) fetch all three in parallel

@@ -8,7 +8,8 @@ export const SearchProvider = ({ children }) => {
   const [searchedText, setSearchedText] = useState('');
   const [data, setData] = useState([]);
   const controllerRef = useRef();
-
+  const [mounted, setMounted] = useState(false);
+  
   const doFetch = useRef(
     debounce((query) => {
       controllerRef.current?.abort();
@@ -17,6 +18,14 @@ export const SearchProvider = ({ children }) => {
       fetchSearchMeal(query, setData, controller.signal);
     }, 300)
   ).current;
+
+  useEffect(() => {
+    setMounted(true);
+    return () => {
+      setSearchedText('');
+    };
+  }, [setSearchedText]);
+
 
   useEffect(() => {
     doFetch(searchedText.trim());
@@ -28,7 +37,7 @@ export const SearchProvider = ({ children }) => {
   }, [searchedText, doFetch]);
 
   return (
-    <SearchContext.Provider value={{ searchedText, setSearchedText, data }}>
+    <SearchContext.Provider value={{ searchedText, setSearchedText, data, mounted }}>
       {children}
     </SearchContext.Provider>
   );
