@@ -10,6 +10,8 @@ import CookedMeals from './pages/CookedMeals/CookedMeals';
 import CookLater from './pages/CookLater/CookLater';
 import Reveal from './components/Other/Reveal';
 import SingleCategory from './pages/SingleCategory/SingleCategory';
+import InternationalDishesPage from './pages/InternationalDishesPage/InternationalDishesPage';
+import SingleInternationalPage from './pages/SingleInternationalPage/SingleInternationalPage';
 
 function App() {
   return (
@@ -19,10 +21,10 @@ function App() {
         <Routes>
           <Route index path='/' element={<Homepage />} />
           <Route path='/food-type/:foodType' element={<FoodType />} />
-          <Route path='/other-dishes' element={<OtherDishesPage />} />
           <Route path='/favorites' element={<FavoritesPage />} />
           <Route path='/cooked-meals' element={<CookedMeals />} />
           <Route path='/cook-later' element={<CookLater />} />
+
           <Route
             path='/single-dish/:id'
             element={
@@ -31,7 +33,18 @@ function App() {
               </Reveal>
             }
           />
+
+          <Route path='/other-dishes' element={<OtherDishesPage />} />
           <Route path='/other-dishes/:category' element={<SingleCategory />} />
+
+          <Route
+            path='/international-cuisines'
+            element={<InternationalDishesPage />}
+          />
+          <Route
+            path='/international-cuisines/:name'
+            element={<SingleInternationalPage />}
+          />
         </Routes>
       </div>
       <Sidebar />

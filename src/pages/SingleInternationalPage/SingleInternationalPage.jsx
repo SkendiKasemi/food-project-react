@@ -1,29 +1,34 @@
 import { useParams } from 'react-router-dom';
-import { useSingleCategory } from '../../context/SingleCategory';
+import { useSearch } from '../../context/SearchContext';
 import { useEffect } from 'react';
 import CategoryCard from '../../components/Other/CategoryCard';
 import Reveal from '../../components/Other/Reveal';
 
-function SingleCategory() {
-  const { category } = useParams();
-  const { setCategory, data } = useSingleCategory();
+function SingleInternationalPage() {
+  const { name } = useParams();
+  const { setSearchedText, data } = useSearch();
 
   useEffect(() => {
-    setCategory(category);
-  }, [category, setCategory]);
+    setSearchedText(name);
+  }, [setSearchedText, name]);
+
+  console.log(data);
 
   return (
     <Reveal>
-      <h3 className='stl-page-header'>{category} : </h3>
+      <h3 className='stl-page-header'>
+        {name.charAt(0).toUpperCase() + name.slice(1)} Food
+      </h3>
       <div className='food-card-container'>
         {data?.map((el) => {
           const { idMeal, strMeal, strMealThumb } = el;
+          
           return (
             <CategoryCard
-              key={idMeal}
               id={idMeal}
               name={strMeal}
               thumb={strMealThumb}
+              key={idMeal}
               singleDish={true}
             />
           );
@@ -33,4 +38,4 @@ function SingleCategory() {
   );
 }
 
-export default SingleCategory;
+export default SingleInternationalPage;

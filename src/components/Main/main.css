@@ -232,9 +232,7 @@ ul {
 
 /* International Cuisine */
 
-.st0 {
-  fill: #ffa94d;
-}
+
 .international-cuisine {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -254,6 +252,18 @@ ul {
   grid-template-columns: 1fr;
   grid-template-rows: 36px 48px 100px;
   row-gap: 10px;
+  color: #0f0f14;
+}
+
+.cousine-link {
+  border: 3px solid #ffa94d;
+  padding: 20px;
+  border-radius: 40px;
+  transition: transform 0.3s ease;
+}
+
+.cousine-link:hover {
+  transform: scale(1.1);
 }
 
 .international-food-icon {
@@ -261,6 +271,10 @@ ul {
   height: 32px;
   fill: none;
   stroke: #ffa94d;
+}
+
+.st0 {
+  fill: #ffa94d;
 }
 
 .cuisine h3 {
@@ -275,5 +289,37 @@ ul {
 /* END International Cuisine  */
 
 /* ************************** */
+
+
+.international-header {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Remove default link styles and position for the underline pseudo-element */
+.international-header a {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px; /* space for the underline */
+}
+
+/* Create the underline as a ::after that grows on hover */
+.international-header a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0%;
+  background-color: #ffa94d;
+  transition: width 0.5s ease;
+}
+
+/* On hover (or focus), expand underline to full width */
+.international-header a:hover::after,
+.international-header a:focus::after {
+  width: 100%;
+}
 
 /* END MAIN */
