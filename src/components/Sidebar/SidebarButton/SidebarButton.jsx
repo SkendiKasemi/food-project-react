@@ -1,12 +1,19 @@
 import { Link } from 'react-router-dom';
+import { useOnScreen } from '../../Other/useOnScreen';
 
-function SidebarButton({ icon, foodType }) {
+export default function SidebarButton({ icon, foodType }) {
+  const [ref, isVisible] = useOnScreen({ rootMargin: '0px', threshold: 0.1 });
+
   return (
-    <Link to={`/food-type/${foodType.toLowerCase()}`} className='link sidebar-buttons'>
+    <Link
+      to={`/other-dishes/${foodType}`}
+      ref={ref}
+      className={`link sidebar-buttons ${
+        isVisible ? 'in-view' : 'out-of-view'
+      }`}
+    >
       {icon}
       <span>{foodType}</span>
     </Link>
   );
 }
-
-export default SidebarButton;
