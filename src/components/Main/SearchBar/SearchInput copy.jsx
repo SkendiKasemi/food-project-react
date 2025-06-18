@@ -2,31 +2,16 @@ import { SearchSVG } from '../../svg/SearchSVG';
 import SearchDisplay from './SearchDisplay';
 import { useSearch } from '../../../context/SearchContext';
 import './search.css';
-import { useNavigate } from 'react-router-dom';
 
 function SearchInput() {
-  const {
-    searchedText,
-    setSearchedText,
-    mounted,
-    isActive,
-    setIsActive,
-    registerWrapper,
-  } = useSearch();
-  const navigate = useNavigate();
+  const { searchedText, setSearchedText, mounted } = useSearch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (searchedText.trim().length === 0) return;
-
-    navigate(`/search/${encodeURIComponent(searchedText.trim())}`);
-
-    setSearchedText('');
-    setIsActive(false);
   };
 
   return (
-    <div className='center' ref={registerWrapper}>
+    <div className='center'>
       <form
         onSubmit={handleSubmit}
         className={`search-form ${mounted ? 'search-form--visible' : ''}`}
@@ -34,22 +19,17 @@ function SearchInput() {
         <input
           type='text'
           value={searchedText}
-          onChange={(e) => {
-            setSearchedText(e.target.value);
-            if (e.target.value.length > 0) setIsActive(true);
-          }}
-          onFocus={() => setIsActive(true)}
+          onChange={(e) => setSearchedText(e.target.value)}
           className={`search-input ${
             searchedText.length > 0 ? 'search-input-active' : ''
           }`}
           placeholder='Search a dish'
         />
-
         <button className='search-btn' type='submit'>
           <SearchSVG className='search-btn-svg' />
         </button>
 
-        {isActive && searchedText.length >= 3 && <SearchDisplay />}
+        {searchedText.length >= 3 && <SearchDisplay />}
       </form>
     </div>
   );

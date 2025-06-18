@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Reveal from './Reveal';
 
-function CategoryCard({ id, name, thumb, desc, singleDish = false }) {
+function CategoryCard({ id, name, thumb, singleDish = false }) {
   return (
     <Reveal>
       <Link

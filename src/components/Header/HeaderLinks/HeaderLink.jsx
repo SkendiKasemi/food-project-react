@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useDishOfTheDay } from '../../../context/DishOfTheDayContext';
 
 function HeaderLink({ href, icon, text }) {
@@ -6,17 +6,17 @@ function HeaderLink({ href, icon, text }) {
 
   if (href != '') {
     return (
-      <Link to={href} className='link header-link'>
+      <NavLink to={href} className='link header-link'>
         {icon}
         {text}
-      </Link>
+      </NavLink>
     );
   } else {
     return (
-      <Link to={`/single-dish/${idMeal}`} className='link header-link'>
+      <NavLink to={`/single-dish/${idMeal}`} className='link header-link'>
         {icon}
         {text}
-      </Link>
+      </NavLink>
     );
   }
 }

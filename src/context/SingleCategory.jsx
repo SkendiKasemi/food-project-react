@@ -29,17 +29,6 @@ export const SingleCategoryProvider = ({ children }) => {
     };
   }, [category, doFetch]);
 
-  // useEffect(() => {
-  //   doFetch(category.trim());
-
-  //   return () => {
-  //     controllerRef.current?.abort();
-  //     doFetch.cancel();
-  //   };
-  // }, [category, doFetch]);
-
-  // console.log(data);
-
   return (
     <SingleCategoryContext.Provider
       value={{

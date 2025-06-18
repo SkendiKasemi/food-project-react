@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useOnScreen } from '../../Other/useOnScreen';
 
 export default function SidebarButton({ icon, foodType }) {
   const [ref, isVisible] = useOnScreen({ rootMargin: '0px', threshold: 0.1 });
 
   return (
-    <Link
+    <NavLink
       to={`/other-dishes/${foodType}`}
       ref={ref}
       className={`link sidebar-buttons ${
@@ -14,6 +14,6 @@ export default function SidebarButton({ icon, foodType }) {
     >
       {icon}
       <span>{foodType}</span>
-    </Link>
+    </NavLink>
   );
 }

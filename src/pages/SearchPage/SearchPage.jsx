@@ -1,33 +1,39 @@
 import { useParams } from 'react-router-dom';
 import { useSearch } from '../../context/SearchContext';
 import { useEffect } from 'react';
-import CategoryCard from '../../components/Other/CategoryCard';
 import Reveal from '../../components/Other/Reveal';
+import CategoryCard from '../../components/Other/CategoryCard';
 
-function SingleInternationalPage() {
-  const { name } = useParams();
+function SearchPage() {
+  const { search } = useParams();
   const { setSearchedText, data } = useSearch();
 
   useEffect(() => {
-    setSearchedText(name);
-  }, [setSearchedText, name]);
+    setSearchedText(search);
+  }, [setSearchedText, search]);
 
-  return (
+  if(data.length === 0) return (
+    <h2>
+      No results were found for <span style={{ fontStyle: 'italic' }}>'{search}'</span>
+    </h2>
+  );
+
+  if(data?.length > 0 ) 
+    return (
     <Reveal>
       <h3 className='stl-page-header'>
-        {name.charAt(0).toUpperCase() + name.slice(1)} Food
+        Results for <span style={{ fontStyle: 'italic' }}>'{search}'</span>
       </h3>
       <div className='food-card-container'>
         {data?.map((el) => {
           const { idMeal, strMeal, strMealThumb } = el;
-          
+
           return (
             <CategoryCard
+              singleDish={true}
               id={idMeal}
               name={strMeal}
               thumb={strMealThumb}
-              key={idMeal}
-              singleDish={true}
             />
           );
         })}
@@ -36,4 +42,4 @@ function SingleInternationalPage() {
   );
 }
 
-export default SingleInternationalPage;
+export default SearchPage;

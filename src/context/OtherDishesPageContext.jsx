@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
+import { fetchCategories } from '../data/fetchCategories';
 
 const OtherDishesPageContext = createContext();
 
@@ -6,16 +7,7 @@ const OtherDishesPageProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    const fetchMeals = async () => {
-      const res = await fetch(
-        'https://www.themealdb.com/api/json/v1/1/categories.php'
-      );
-      const data = await res.json();
-
-      setCategories(data.categories);
-    };
-
-    fetchMeals();
+    fetchCategories(setCategories);
   }, []);
 
   return (

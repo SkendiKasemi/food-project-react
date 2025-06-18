@@ -70,3 +70,16 @@
 }
 
 /* END HEADER */
+
+.header-link.active {
+  color: #ffa94d;
+  background-color: #0f0f14;
+}
+
+.header-link.active .cook-icon {
+  stroke: #ffa94d !important;
+}
+
+.header-link.active .header-icon {
+  fill: #ffa94d !important;
+}

@@ -1,4 +1,3 @@
-// src/components/ui/Reveal.jsx
 import { useRef, useState, useEffect } from 'react';
 
 export default function Reveal({
@@ -28,7 +27,10 @@ export default function Reveal({
   }, [threshold, rootMargin]);
 
   return (
-    <div ref={ref} className={`reveal ${visible ? 'reveal--visible' : ''}`}>
+    <div
+      ref={ref}
+      className={`center reveal ${visible ? 'reveal--visible' : ''}`}
+    >
       {children}
     </div>
   );

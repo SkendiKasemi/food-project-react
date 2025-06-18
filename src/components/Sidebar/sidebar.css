@@ -1,5 +1,3 @@
-/* SIDEBAR */
-
 .sidebar {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
@@ -24,8 +22,8 @@
 }
 
 .sidebar-icon {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   transition: all 0.25s ease-in;
   margin-right: 15px;
   align-self: center;
@@ -86,6 +84,19 @@
 .sidebar-buttons.out-of-view {
   opacity: 0;
   transform: translateY(-20px);
+}
+
+.active {
+  color: #0f0f14;
+  background-color: #ffa94d;
+}
+
+.sidebar-buttons.active .sidebar-stroke-icon {
+  stroke: #0f0f14 !important;
+}
+
+.sidebar-buttons.active .sidebar-fill-icon {
+  fill: #0f0f14 !important;
 }
 
 /* END SIDEBAR */

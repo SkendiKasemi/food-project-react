@@ -12,12 +12,16 @@ import Reveal from './components/Other/Reveal';
 import SingleCategory from './pages/SingleCategory/SingleCategory';
 import InternationalDishesPage from './pages/InternationalDishesPage/InternationalDishesPage';
 import SingleInternationalPage from './pages/SingleInternationalPage/SingleInternationalPage';
+import OtherDishesPage2 from './pages/OtherDishesPage/OtherDishesPage2';
+import ScrollToTop from './components/Other/scrollToTop';
+import SearchPage from './pages/SearchPage/SearchPage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <Header />
       <div className='general-main-part'>
+        <ScrollToTop />
         <Routes>
           <Route index path='/' element={<Homepage />} />
           <Route path='/food-type/:foodType' element={<FoodType />} />
@@ -35,20 +39,29 @@ function App() {
           />
 
           <Route path='/other-dishes' element={<OtherDishesPage />} />
+
+          <Route path='/other-dishes2' element={<OtherDishesPage2 />} />
+
           <Route path='/other-dishes/:category' element={<SingleCategory />} />
 
           <Route
             path='/international-cuisines'
             element={<InternationalDishesPage />}
           />
+
           <Route
             path='/international-cuisines/:name'
             element={<SingleInternationalPage />}
           />
+
+          <Route
+            path='/search/:search'
+            element={<SearchPage />}
+          />
         </Routes>
       </div>
       <Sidebar />
-    </BrowserRouter>
+    </>
   );
 }
 

@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
+import './reveal.css'; 
 
 export default function Reveal({
   children,

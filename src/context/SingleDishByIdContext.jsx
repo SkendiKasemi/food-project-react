@@ -10,8 +10,14 @@ const SingleDishByIdProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    if (!id) return; 
+
+    setData({}); 
+    setLoading(true); 
+
     const controller = new AbortController();
-    fetchMealDataById(id, setLoading, setData);
+    fetchMealDataById(id, setLoading, setData, controller.signal);
+
     return () => {
       controller.abort();
     };

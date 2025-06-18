@@ -173,12 +173,6 @@ export const internationalCuisines = [
     Icon: <MalaysiaSVG />,
   },
   {
-    type: 'Unknown',
-    description:
-      'Discover mysterious recipes labeled ‘Unknown,’ offering surprise flavors and undisclosed origins that invite adventurous palates to explore hidden culinary treasures.',
-    Icon: <UnknownSVG />,
-  },
-  {
     type: 'Vietnamese',
     description:
       'Relish Vietnamese pho, banh mi, spring rolls, bun cha, and fresh herb-packed salads marrying light broths, crisp textures, and fragrant aromatics.',

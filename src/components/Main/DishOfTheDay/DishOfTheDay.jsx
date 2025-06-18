@@ -1,13 +1,8 @@
-import { useDishOfTheDay } from '../../../context/DishOfTheDayContext';
-import Loading from '../../Other/Loading';
-
 import DOTDdescription from './DOTD/DOTDdesc/DOTDdescription';
 import DOTDimage from './DOTD/DOTDimage';
 
 function DishOfTheDay() {
-  const { idMeal } = useDishOfTheDay();
 
-  if (!idMeal) return <Loading />;
 
   return (
     <div className='center'>

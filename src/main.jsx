@@ -14,27 +14,30 @@ import {
 import { SearchProvider } from './context/SearchContext.jsx';
 import { OtherDishesPageProvider } from './context/OtherDishesPageContext.jsx';
 import { SingleCategoryProvider } from './context/SingleCategory.jsx';
+import { BrowserRouter } from 'react-router-dom';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <DishOfTheDayProvider>
-      <SingleDishByIdProvider>
-        <OtherDishesProvider>
-          <CookLaterProvider>
-            <CookedMealsProvider>
-              <FavoritesProvider>
-                <SearchProvider>
-                  <OtherDishesPageProvider>
-                    <SingleCategoryProvider>
-                      <App />
-                    </SingleCategoryProvider>
-                  </OtherDishesPageProvider>
-                </SearchProvider>
-              </FavoritesProvider>
-            </CookedMealsProvider>
-          </CookLaterProvider>
-        </OtherDishesProvider>
-      </SingleDishByIdProvider>
-    </DishOfTheDayProvider>
+    <BrowserRouter>
+      <DishOfTheDayProvider>
+        <SingleDishByIdProvider>
+          <OtherDishesProvider>
+            <CookLaterProvider>
+              <CookedMealsProvider>
+                <FavoritesProvider>
+                  <SearchProvider>
+                    <OtherDishesPageProvider>
+                      <SingleCategoryProvider>
+                        <App />
+                      </SingleCategoryProvider>
+                    </OtherDishesPageProvider>
+                  </SearchProvider>
+                </FavoritesProvider>
+              </CookedMealsProvider>
+            </CookLaterProvider>
+          </OtherDishesProvider>
+        </SingleDishByIdProvider>
+      </DishOfTheDayProvider>
+    </BrowserRouter>
   </StrictMode>
 );

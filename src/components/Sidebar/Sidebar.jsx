@@ -5,7 +5,6 @@ import './sidebar.css';
 
 function Sidebar() {
   const { categories } = useOtherDishesPage();
-  console.log(categories);
 
   return (
     <div className='sidebar'>
