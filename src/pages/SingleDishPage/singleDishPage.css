@@ -136,6 +136,7 @@
 .recipe-ingredient {
   padding: 8px;
   font-size: 16px;
+  font-style: italic;
 }
 
 .recipe-ingredient:not(:last-child) {

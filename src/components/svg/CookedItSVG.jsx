@@ -2,10 +2,8 @@ function CookedItSVG({ sdp }) {
   return (
     <svg
       viewBox='0 0 24 24'
-      // fill='none'
       xmlns='http://www.w3.org/2000/svg'
       stroke=''
-      // className='sdp-svg'
       className={sdp ? 'sdp-svg only-hover' : 'header-icon'}
     >
       <g id='SVGRepo_bgCarrier' stroke-width='0'></g>
@@ -15,7 +13,6 @@ function CookedItSVG({ sdp }) {
         stroke-linejoin='round'
       ></g>
       <g id='SVGRepo_iconCarrier'>
-        {' '}
         <path
           fill-rule='evenodd'
           clip-rule='evenodd'

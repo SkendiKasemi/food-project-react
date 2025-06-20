@@ -100,3 +100,18 @@
 }
 
 /* END SIDEBAR */
+
+/* Scrollbar styles for WebKit (Chrome, Safari, Edge) */
+.sidebar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #0f0f14; /* scrollbar background */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #ffa94d; /* scrollbar handle */
+  border-radius: 10px;
+  border: 2px solid #0f0f14; /* creates padding around thumb */
+}

@@ -1,3 +1,5 @@
+import toast from 'react-hot-toast';
+
 export const addItem = (meal, items, setItems, storePlace) => {
   const {
     idMeal,
@@ -7,21 +9,21 @@ export const addItem = (meal, items, setItems, storePlace) => {
     strCategory: category,
   } = meal;
 
-  const newItem = {
-    id: idMeal,
-    name: name,
-    image: image,
-    area: area,
-    category: category,
-  };
+  const newItem = { id: idMeal, name, image, area, category };
+  const isDuplicate = items.some((item) => item.id === newItem.id);
 
-  const isDuplicate = items.some((item) => item.name === newItem.name);
   if (isDuplicate) {
-    alert(`Meal Already Added To ${storePlace}!`);
+    toast.error(`“${name}” is already in your ${storePlace}!`, {
+      duration: 3000,
+    });
     return;
   }
 
   const updatedItems = [...items, newItem];
   setItems(updatedItems);
-  localStorage.setItem(`${storePlace}`, JSON.stringify(updatedItems));
+  localStorage.setItem(storePlace, JSON.stringify(updatedItems));
+
+  toast.success(`“${name}” added to ${storePlace}!`, {
+    duration: 3000,
+  });
 };

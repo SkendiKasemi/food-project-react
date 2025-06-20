@@ -4,7 +4,7 @@ import SearchItem from './SearchItem';
 function SearchDisplay() {
   const { data } = useSearch();
 
-  if (data.length === 0) {
+  if (data?.length === 0) {
     return (
       <div className='search-result-display empty'>
         <span>No dish was found!</span>
@@ -14,7 +14,7 @@ function SearchDisplay() {
 
   return (
     <div className='search-result-display'>
-      {data.map((item, i) => (
+      {data?.map((item, i) => (
         <SearchItem item={item} key={item.idMeal || i} index={i} />
       ))}
     </div>

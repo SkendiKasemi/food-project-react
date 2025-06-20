@@ -15,10 +15,28 @@ import SingleInternationalPage from './pages/SingleInternationalPage/SingleInter
 import OtherDishesPage2 from './pages/OtherDishesPage/OtherDishesPage2';
 import ScrollToTop from './components/Other/scrollToTop';
 import SearchPage from './pages/SearchPage/SearchPage';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <>
+      <Toaster
+        position='bottom-right'
+        toastOptions={{
+          style: {
+            borderRadius: '8px',
+            padding: '12px 16px',
+            background: '#fff',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+          },
+          success: {
+            iconTheme: {
+              primary: '#10B981', // emerald-500
+              secondary: '#fff',
+            },
+          },
+        }}
+      />
       <Header />
       <div className='general-main-part'>
         <ScrollToTop />
@@ -54,10 +72,7 @@ function App() {
             element={<SingleInternationalPage />}
           />
 
-          <Route
-            path='/search/:search'
-            element={<SearchPage />}
-          />
+          <Route path='/search/:search' element={<SearchPage />} />
         </Routes>
       </div>
       <Sidebar />

@@ -7,39 +7,44 @@ const SearchContext = createContext();
 
 export const SearchProvider = ({ children }) => {
   const [searchedText, setSearchedText] = useState('');
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);      // <— start as null
+  const [isLoading, setIsLoading] = useState(false);
   const [mounted, setMounted] = useState(false);
-
-  // NEW: active/open state
   const [isActive, setIsActive] = useState(false);
-
-  // SINGLE ref you register from your SearchInput
   const wrapperRef = useRef(null);
-
-  // For clearing on route change
   const location = useLocation();
-
-  // Debounced API fetch
   const controllerRef = useRef();
+
+  // debounce wrapper
   const doFetch = useRef(
-    debounce((q) => {
+    debounce(async (q) => {
+      if (!q) {
+        setData([]);            // if empty search, immediately clear
+        setIsLoading(false);
+        return;
+      }
       controllerRef.current?.abort();
+      setIsLoading(true);
       const ctrl = new AbortController();
       controllerRef.current = ctrl;
-      fetchSearchMeal(q, setData, ctrl.signal);
+
+      try {
+        await fetchSearchMeal(q, setData, ctrl.signal);
+      } finally {
+        setIsLoading(false);
+      }
     }, 300)
   ).current;
 
-  // mount flag
+  // mount lifecycle
   useEffect(() => {
     setMounted(true);
-    return () => {
-      setSearchedText('');
-    };
+    return () => setSearchedText('');
   }, [setSearchedText]);
 
   // fetch on text change
   useEffect(() => {
+    setData(null);            // reset to “loading” state
     doFetch(searchedText.trim());
     return () => {
       controllerRef.current?.abort();
@@ -47,7 +52,7 @@ export const SearchProvider = ({ children }) => {
     };
   }, [searchedText, doFetch]);
 
-  // outside‑click → close
+  // click-outside to close
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
@@ -59,13 +64,12 @@ export const SearchProvider = ({ children }) => {
       document.removeEventListener('click', handleClickOutside, true);
   }, []);
 
-  // route change → clear & close
+  // on route change
   useEffect(() => {
     setSearchedText('');
     setIsActive(false);
   }, [location.pathname, setSearchedText]);
 
-  // Helper to let SearchInput register its container
   const registerWrapper = (node) => {
     wrapperRef.current = node;
   };
@@ -76,6 +80,7 @@ export const SearchProvider = ({ children }) => {
         searchedText,
         setSearchedText,
         data,
+        isLoading,           
         mounted,
         isActive,
         setIsActive,

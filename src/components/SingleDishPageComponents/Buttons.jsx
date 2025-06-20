@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast';
 import {
   useCookedMeals,
   useCookLater,
@@ -9,7 +10,6 @@ import CookedItSVG from '../svg/CookedItSVG';
 import CookLaterSVG from '../svg/CookLaterSVG';
 import { FavoritesSVG } from '../svg/NavHeaderSVG';
 import YoutubeSVG from '../svg/YoutubeSVG';
-
 
 function Buttons() {
   const { meal } = useDishById();
@@ -26,32 +26,34 @@ function Buttons() {
     {
       key: 'favorites',
       Icon: FavoritesSVG,
-      onClick: (meal) => addItem(meal, fav, setFav, 'favorites'),
+      onClick: (meal) => {
+        addItem(meal, fav, setFav, 'favorites'); 
+      },
     },
     {
       key: 'cookLater',
       Icon: CookLaterSVG,
-      onClick: (meal) => addItem(meal, cookLater, setCookLater, 'cookLater'),
+      onClick: (meal) => {
+        addItem(meal, cookLater, setCookLater, 'cookLater');
+      },
     },
     {
       key: 'cookedMeals',
       Icon: CookedItSVG,
-      onClick: (meal) =>
-        addItem(meal, cookedMeals, setCookedMeals, 'cookedMeals'),
+
+      onClick: (meal) => {
+        addItem(meal, cookedMeals, setCookedMeals, 'cookedMeals');
+      },
     },
   ];
 
   return (
     <div className='sdp-buttons'>
-        {buttonConfigs.map(({ onClick, Icon, key }) => (
-          <button
-            key={key}
-            className='sdp-button'
-            onClick={() => onClick(meal)}
-          >
-            <Icon sdp={true} />
-          </button>
-        ))}
+      {buttonConfigs.map(({ onClick, Icon, key }) => (
+        <button key={key} className='sdp-button' onClick={() => onClick(meal)}>
+          <Icon sdp={true} />
+        </button>
+      ))}
     </div>
   );
 }

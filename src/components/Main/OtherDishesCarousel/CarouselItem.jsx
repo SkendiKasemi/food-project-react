@@ -9,7 +9,7 @@ function CarouselItem({ image, description, name, id }) {
 
       <div className='card-data'>
         <h3 className='card-name'>
-          {name.length > 14 ? name.slice(0, 10) + '...' : name}
+          {name.length > 14 ? `${name.slice(0, 14)}...` : name}
         </h3>
         <p className='card-description'>{description}</p>
 

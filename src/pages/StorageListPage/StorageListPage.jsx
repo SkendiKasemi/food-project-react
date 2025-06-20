@@ -1,11 +1,22 @@
-import FoodCard from "../../components/Other/FoodCard";
+import EmptyState from '../../components/Other/EmptyState';
+import FoodCard from '../../components/Other/FoodCard';
+import Reveal from '../../components/Other/Reveal';
 import './storageListPage.css';
 
-function StorageListPage({ title, useStorageHook, storageKey }) {
+function StorageListPage({ title, useStorageHook, storageKey, SVG }) {
   const { items, setItems } = useStorageHook();
 
-  if (!items || items.length === 0)
-    return <p>You have no items in the {title.toLowerCase()}</p>
+  if (!items || items.length === 0) {
+    return (
+      <Reveal>
+        <EmptyState
+          title={title}
+          suggestion={`Try adding a few recipes to your ${title.toLowerCase()} first!`}
+          SVG={SVG}
+        />
+      </Reveal>
+    );
+  }
 
   return (
     <>

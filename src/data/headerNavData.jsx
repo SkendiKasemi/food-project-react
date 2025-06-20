@@ -1,11 +1,8 @@
-import HeaderSearchInput from '../components/Main/SearchBar/SearchInput';
 import CookedItSVG from '../components/svg/CookedItSVG';
 import CookLaterSVG from '../components/svg/CookLaterSVG';
 import {
   TodayDishSVG,
   FavoritesSVG,
-  InternationalSVG,
-  KitchenTipsSVG,
   OtherDishesSVG,
 } from '../components/svg/NavHeaderSVG';
 

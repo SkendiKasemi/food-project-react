@@ -1,10 +1,8 @@
-import { useOtherDishesPage } from '../../context/OtherDishesPageContext';
 import { sidebarData } from '../../data/SidebarData';
 import SidebarButton from './SidebarButton/SidebarButton';
 import './sidebar.css';
 
 function Sidebar() {
-  const { categories } = useOtherDishesPage();
 
   return (
     <div className='sidebar'>

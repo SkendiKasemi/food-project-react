@@ -45,7 +45,8 @@ TXT : #0F0F14
 .card-data {
   background-color: #ffa94d;
   display: grid;
-  grid-template-rows: 3;
+  grid-template-rows: 60px 30px 60px;
+
   align-items: center;
   justify-items: center;
   height: 160px;
@@ -67,7 +68,7 @@ TXT : #0F0F14
 }
 
 .card-name {
-  font-size: 24px;
+  font-size: 22px;
   color: #0f0f14;
   margin-bottom: 0.375rem;
 }
@@ -75,14 +76,16 @@ TXT : #0F0F14
 .card-description {
   font-weight: 500;
   margin-bottom: 1rem;
-  font-size: 18px;
+  font-size: 16px;
   align-self: start;
 }
 a {
   text-decoration: none;
 }
 .card-button {
+  justify-self: center;
   display: inline-block;
+  margin-bottom: 7.5px;
   border: 3px solid #0f0f14;
   background-color: #0f0f14;
   padding: 0.75rem 1.5rem;
@@ -141,7 +144,7 @@ a {
 
 /* Base style for bullets */
 .swiper-pagination-bullet {
-  background-color: #ffa94d c3;
+  background-color: #ffa94d;
   width: 12px;
   height: 12px;
   margin: 0 6px;
