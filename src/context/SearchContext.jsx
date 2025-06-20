@@ -7,7 +7,7 @@ const SearchContext = createContext();
 
 export const SearchProvider = ({ children }) => {
   const [searchedText, setSearchedText] = useState('');
-  const [data, setData] = useState(null);      // <— start as null
+  const [data, setData] = useState(null); // <— start as null
   const [isLoading, setIsLoading] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [isActive, setIsActive] = useState(false);
@@ -15,11 +15,10 @@ export const SearchProvider = ({ children }) => {
   const location = useLocation();
   const controllerRef = useRef();
 
-  // debounce wrapper
   const doFetch = useRef(
     debounce(async (q) => {
       if (!q) {
-        setData([]);            // if empty search, immediately clear
+        setData([]);
         setIsLoading(false);
         return;
       }
@@ -44,7 +43,7 @@ export const SearchProvider = ({ children }) => {
 
   // fetch on text change
   useEffect(() => {
-    setData(null);            // reset to “loading” state
+    setData(null); // reset to “loading” state
     doFetch(searchedText.trim());
     return () => {
       controllerRef.current?.abort();
@@ -64,11 +63,19 @@ export const SearchProvider = ({ children }) => {
       document.removeEventListener('click', handleClickOutside, true);
   }, []);
 
+  console.log(data);
+
   // on route change
-  useEffect(() => {
-    setSearchedText('');
-    setIsActive(false);
-  }, [location.pathname, setSearchedText]);
+  // useEffect(() => {
+  //   // setSearchedText('');
+  //   if (
+  //     !location.pathname.startsWith('/search/') ||
+  //     location.pathname.startsWith('/international-cuisines/')
+  //   ) {
+  //     setSearchedText('');
+  //   }
+  //   setIsActive(false);
+  // }, [location.pathname, setSearchedText]);
 
   const registerWrapper = (node) => {
     wrapperRef.current = node;
@@ -80,11 +87,12 @@ export const SearchProvider = ({ children }) => {
         searchedText,
         setSearchedText,
         data,
-        isLoading,           
+        isLoading,
         mounted,
         isActive,
         setIsActive,
         registerWrapper,
+        location,
       }}
     >
       {children}

@@ -3,6 +3,7 @@ import SearchDisplay from './SearchDisplay';
 import { useSearch } from '../../../context/SearchContext';
 import './search.css';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function SearchInput() {
   const {
@@ -12,6 +13,7 @@ function SearchInput() {
     isActive,
     setIsActive,
     registerWrapper,
+    location,
   } = useSearch();
   const navigate = useNavigate();
 
@@ -24,6 +26,13 @@ function SearchInput() {
     setSearchedText('');
     setIsActive(false);
   };
+
+  useEffect(() => {
+    // if (!location.pathname.startsWith('/search/')) {
+      setSearchedText('');
+    // }
+    setIsActive(false);
+  }, [location.pathname, setSearchedText, setIsActive]);
 
   return (
     <div className='center' ref={registerWrapper}>

@@ -14,6 +14,7 @@ function SearchPage() {
     setSearchedText(search);
   }, [setSearchedText, search]);
 
+
   // 1) still loading: show nothing or a spinner
   if (data === null && isLoading) {
     return <Loading />;
