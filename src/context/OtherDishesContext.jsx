@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { getRandomMealsFromLetter } from '../components/Main/OtherDishesCarousel/data/getRandomMealsFromLetter';
+import { getRandomMealsFromLetter } from '../data/getRandomMealsFromLetter';
 
 const OtherDishesContext = createContext();
 

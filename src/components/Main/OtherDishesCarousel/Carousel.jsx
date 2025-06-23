@@ -6,7 +6,6 @@ import 'swiper/css/pagination';
 import './carousel.css';
 import { useOtherDishes } from '../../../context/OtherDishesContext';
 import CarouselItem from './CarouselItem';
-import { Link } from 'react-router-dom';
 
 function Carousel() {
   const { meals } = useOtherDishes();
